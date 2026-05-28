@@ -12,7 +12,7 @@ Static one-page brochure website for `robinclinic.co.uk`.
 
 GitHub Actions runs tests and builds the site on pull requests and pushes to `main`. Pushes to `main` deploy `dist/` to GitHub Pages.
 
-The custom domain is configured by `CNAME` and should remain set to:
+The custom domain is configured in GitHub Pages settings and mirrored by `CNAME` in this repository:
 
 ```text
 robinclinic.co.uk
