@@ -37,8 +37,17 @@ test("source page contains required Robin Clinic microsclerotherapy copy and sup
     /This procedure is carried out by a Registered Nurse with more than 25 years of experience\./,
   );
   assert.match(html, /Book your free consultation today\./);
-  assert.match(html, /000 000/);
+  assert.match(html, /07873 914838/);
   assert.match(html, /assets\/clinic-room\.png/);
+});
+
+test("source page displays current phone and email contact links", () => {
+  const html = readRequired("src/index.html");
+
+  assert.match(html, /href="tel:07873914838"/);
+  assert.match(html, /07873 914838/);
+  assert.match(html, /href="mailto:info@robinclinic\.co\.uk"/);
+  assert.match(html, /info@robinclinic\.co\.uk/);
 });
 
 test("source page has three individual icon-backed feature sections", () => {
