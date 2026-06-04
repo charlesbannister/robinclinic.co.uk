@@ -38,7 +38,7 @@ test("source page contains required Robin Clinic microsclerotherapy copy and sup
   );
   assert.match(html, /Book your free consultation today\./);
   assert.match(html, /07873 914838/);
-  assert.match(html, /assets\/clinic-room\.png/);
+  assert.match(html, /assets\/robinclinic_robin\.jpeg/);
 });
 
 test("source page displays current phone and email contact links", () => {
@@ -78,6 +78,8 @@ test("styles define a calm responsive clinic layout", () => {
   assert.match(css, /--sage:/);
   assert.match(css, /\.hero\b/);
   assert.match(css, /\.feature-grid\b/);
+  assert.match(css, /\.contact-actions\s*{[\s\S]*?align-items:\s*center;/);
+  assert.match(css, /\.email-link\s*{[\s\S]*?text-align:\s*center;/);
   assert.match(css, /@media\s*\(max-width:\s*720px\)/);
   assert.match(css, /grid-template-columns/);
 });
@@ -108,7 +110,7 @@ test("build writes dist with CNAME and static assets", () => {
   assert.ok(existsSync(projectPath("dist/index.html")), "dist/index.html exists");
   assert.ok(existsSync(projectPath("dist/styles.css")), "dist/styles.css exists");
   assert.equal(readRequired("dist/CNAME").trim(), "robinclinic.co.uk");
-  assert.ok(statSync(projectPath("dist/assets/clinic-room.png")).size > 0);
+  assert.ok(statSync(projectPath("dist/assets/robinclinic_robin.jpeg")).size > 0);
 });
 
 test("GitHub Pages workflow tests and builds dist before main-branch deployment", () => {
